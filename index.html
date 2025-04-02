@@ -11,6 +11,46 @@
     />
     <link rel="stylesheet" href="/index.css" />
     <title>Hashim Ali</title>
+    <!-- The following stuff you are about to see was never intended to be done this way but I gotta keep the Js to be less then 10% -->
+    <div id="random-websites" style="display: none">
+      <p>https://www.youtube.com/watch?v=WXuK6gekU1Y</p>
+      <p>https://cpu.land/</p>
+      <p>https://tympanus.net/Tutorials/MorphingEffectCanvas2D/</p>
+      <p>https://core.ac.uk/download/pdf/190331679.pdf</p>
+      <p>https://waitbutwhy.com/2015/12/the-tail-end.html</p>
+      <p>
+        https://docs.google.com/presentation/d/e/2PACX-1vSmIbSwh1_DXKEMU5YKgYpt5_b4yfOfpfEOKS5_cvtLdiHsX6zt-gNeisamRuCtDtCb2SbTafTI8V47/pub?start=false&loop=false&delayms=3000&slide=id.g2f8587b72c7_0_238
+      </p>
+      <p>https://serverlesshorrors.com</p>
+      <p>https://youtu.be/qMLbY2PS5HU?si=6wAo8HCWS2MjZhZM</p>
+      <p>https://www.youtube.com/watch?v=cAkMcPfY_Ns&list=LL&index=173</p>
+      <p>https://www.youtube.com/watch?v=1JT_lTfK69Q</p>
+      <p>https://tympanus.net/codrops/webzibition/</p>
+      <p>https://www.awwwards.com/</p>
+      <p>https://youtu.be/fa8k8IQ1_X0?si=nYz0T7v6yY1QTu_K</p>
+      <p>
+        https://ourworldindata.org/much-better-awful-can-be-better?utm_source=Non-trivial&utm_medium=Newsletter&utm_campaign=Post-newsletter
+      </p>
+      <p>https://ldeming.posthaven.com/advice-for-ambitious-teenagers</p>
+      <p>
+        https://www.youtube.com/watch?v=HZGCoVF3YvM&list=PLGUYmDO8NptKrPftNwLrIkFFzrF_EWeiW
+      </p>
+      <p>https://youtu.be/arj7oStGLkU?si=BCUX1bA08jQlKf8d</p>
+      <p>https://youtu.be/v2wBF_TNEBo?si=hMWExc76DxWvGo-U</p>
+      <p>https://youtu.be/e9Mb0cbDenA?si=8fcsdW5cYGoPde-3</p>
+      <p>https://store.steampowered.com/app/383270/Hue/</p>
+      <p>https://store.steampowered.com/app/220780/Thomas_Was_Alone/</p>
+    </div>
+    <script>
+      const random_websites = document.getElementById("random-websites");
+      if (window.location.search === "???") {
+        window.location.href =
+          random_websites.children[
+            Math.floor(Math.random() * random_websites.children.length)
+          ].innerHTML;
+      }
+    </script>
+    <!-- The weird stuff ends here -->
   </head>
   <body>
     <div class="gradient"></div>
@@ -49,22 +89,24 @@
           </p>
         </h1>
         <p>
-          I am passionate in the fields of Frontend Dev and UI/UX Design. I like
-          to build Fast-performance and well-designed website interfaces with
-          the latest technologies. I am currently studying Computer Science at
-          Government College University Lahore.
+A website I think you should visit: 
+<br>
+https://hashim-ali.work/???
+<br>
+things you shouldn't try to do:
+          <ul>
+            <li>open devtools(inspcect element)</li>
+            <li>visit: https://hashim-ali.work/theforgottengame.html</li>      
+          </ul>
         </p>
-        <button>
-          <a
-            href="mailto:hashimcpro@gmail.com"
-            target="_blank"
-            rel="noopener noreferrer"
-            style="color: #1f2937"
-            >Contact me<img src="/assets/arrow.svg" alt="→"
-          /></a>
-        </button>
       </div>
       <img src="/assets/hero_icon.svg" alt="hero_icon" />
     </main>
+    <div id="devtools-overlay">
+      <img src="/assets/cat.png" alt="cat holding a gun and voki toki" height="500px">
+      <p>Press Ctrl + W now or I launch a strike at <strong id="location"></strong></p>
+    </div>
+
+    <script src="/index.js"></script>
   </body>
 </html>
