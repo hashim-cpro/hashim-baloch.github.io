@@ -13,9 +13,10 @@ body {
   background: linear-gradient(104deg, #121212 33.84%, #1e3a8a 162.79%);
   height: 100vh;
   width: 100vw;
-  overflow: hidden;
+  overflow: hidden auto;
   color: #fff;
   font-family: Poppins;
+  font-size: 14px; /* Base font size adjusted */
 }
 .gradient {
   position: absolute;
@@ -42,6 +43,7 @@ nav {
   color: #fff;
   position: fixed;
   width: 90%;
+  flex-wrap: wrap; /* Allow wrapping for smaller screens */
 }
 .logo {
   font-size: 24px;
@@ -77,9 +79,12 @@ main {
 }
 .text {
   width: 40%;
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #f0f0f0;
 }
 h1 {
-  font-size: 7vh;
+  font-size: 5vh; /* Reduced from 7vh */
   line-height: 1;
 }
 b {
@@ -123,6 +128,13 @@ button {
   justify-content: center;
   align-items: center;
 }
+.fun-zone h2 {
+  font-size: 4vh;
+}
+.fun-zone p {
+  font-size: 1.2rem;
+  line-height: 1.4;
+}
 @media screen and (max-width: 768px) {
   body {
     overflow: hidden scroll;
@@ -136,4 +148,57 @@ button {
   .text {
     width: 100%;
   }
+  h1 {
+    font-size: 4.5vh;
+  }
+  .fun-zone h2 {
+    font-size: 3.5vh;
+  }
+  .fun-zone p {
+    font-size: 1rem;
+  }
+  nav {
+    flex-direction: column; /* Stack items vertically */
+    align-items: flex-start;
+    height: auto; /* Adjust height for wrapping */
+    padding: 10px; /* Add padding for smaller screens */
+  }
+
+  .nav-links {
+    flex-direction: column; /* Stack links vertically */
+    gap: 5px; /* Reduce spacing between items */
+  }
+
+  .logo img {
+    height: 40px; /* Adjust logo size for smaller screens */
+  }
+}
+
+.nav-links {
+  display: flex;
+  gap: 10px; /* Add spacing between items */
+}
+
+.text h2,
+.text h3 {
+  margin-top: 1.5rem;
+  font-size: 1.5rem;
+  color: #ffcc00;
+}
+
+.text ul {
+  margin: 1rem 0;
+  padding-left: 1.5rem;
+}
+
+.text ul li {
+  margin-bottom: 0.5rem;
+}
+
+.text strong {
+  color: #ff5733;
+}
+
+.text p {
+  margin-bottom: 1rem;
 }
