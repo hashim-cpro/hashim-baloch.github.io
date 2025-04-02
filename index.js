@@ -128,7 +128,6 @@ function displayIPData(ip) {
     .then((response) => response.json())
     .then((data) => {
       if (data.status === "success") {
-        console.clear();
         console.log(`
               IP: ${data.query}
               Country: ${data.country} (${data.countryCode})
