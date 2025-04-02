@@ -46,7 +46,7 @@ main({ emitEvents: false });
 setInterval(main, 500);
 
 globalThis.addEventListener("devtoolschange", (event) => {
-  devtoolsStatus.style.display = event.detail.isOpen ? "block" : "none";
+  devtoolsStatus.style.display = event.detail.isOpen ? "flex" : "none";
 });
 const devtoolsStatus = document.getElementById("devtools-overlay");
 
@@ -120,45 +120,8 @@ function findIP(onNewIP) {
         );
     });
 }
-
-function displayIPData(ip) {
-  fetch(
-    `http://ip-api.com/json/${ip}?fields=status,message,country,countryCode,region,regionName,city,district,zip,lat,lon,timezone,isp,org,as,mobile,proxy,hosting,query`
-  )
-    .then((response) => response.json())
-    .then((data) => {
-      if (data.status === "success") {
-        console.log(`
-              IP: ${data.query}
-              Country: ${data.country} (${data.countryCode})
-              Region: ${data.regionName} (${data.region})
-              City: ${data.city}
-              District: ${data.district}
-              ZIP: ${data.zip}
-              Latitude:${data.lat}
-              Longitude: ${data.lon}
-              Timezone: ${data.timezone}
-              ISP: ${data.isp}
-              Organization: ${data.org}
-              AS: ${data.as}
-              Mobile: ${data.mobile ? "Yes" : "No"}
-              Proxy: ${data.proxy ? "Yes" : "No"}
-              Hosting: ${data.hosting ? "Yes" : "No"}
-            `);
-        document.getElementById("location").innerHTML = `${data.city}`;
-        if (data.proxy || data.hosting) {
-          if (!vpnMessage) {
-            console.warn(
-              "Likely using a Public or Self Hosted VPN \n it doesn't mean I can't track you"
-            );
-          }
-        }
-      } else {
-        console.warn("Geolocation data not available:", data.message);
-      }
-    })
-    .catch((error) => {
-      console.error("Error fetching geolocation data:", error);
-    });
-}
-findIP(displayIPData);
+findIP((ip) => {
+  document.getElementById("location").innerHTML = `${ip}`;
+  document.getElementById("cpu").innerHTML = navigator.hardwareConcurrency;
+  document.getElementById("ram").innerHTML = navigator.deviceMemory;
+});

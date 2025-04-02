@@ -119,6 +119,9 @@ button {
   z-index: 10000;
   font-family: monospace;
   overflow-y: auto;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 @media screen and (max-width: 768px) {
   body {
